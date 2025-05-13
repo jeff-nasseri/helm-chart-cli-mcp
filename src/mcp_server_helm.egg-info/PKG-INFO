@@ -1,0 +1,266 @@
+Metadata-Version: 2.4
+Name: mcp-server-helm
+Version: 0.1.1
+Summary: MCP server for Helm integration with Claude and other AI assistants
+Author-email: Jeff Nasseri <jeff.nasseri@example.com>
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: mcp-python>=0.1.0
+Dynamic: license-file
+
+## Overview
+
+Helm MCP provides a bridge between AI assistants and the Helm package manager for Kubernetes. It allows AI assistants to interact with Helm through natural language requests, executing commands like installing charts, managing repositories, and more.
+
+## Installation
+
+### Prerequisites
+- Python 3.8+
+- Docker (for containerized deployment)
+- Helm CLI installed
+
+### Using Docker
+
+Build and run the Docker container:
+
+```bash
+# Clone the repository
+git clone https://github.com/modelcontextprotocol/servers.git
+cd src/helm
+
+# Build the Docker image
+docker build -t mcp-helm .
+```
+
+### Manual Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/modelcontextprotocol/servers.git
+cd src/helm
+
+# Install dependencies
+uv venv
+source .venv/bin/activate
+uv pip install -e .
+
+# Run the server
+mcp-server-helm
+```
+
+## Supported Functionalities
+
+Helm MCP supports all major Helm commands, including:
+
+### Completion Commands
+- `helm completion` - Generate autocompletion scripts for various shells
+
+### Chart Creation and Management
+- `helm create` - Create a new chart
+- `helm lint` - Verify chart formatting
+- `helm package` - Package a chart directory into a chart archive
+- `helm template` - Render chart templates locally
+
+### Dependency Management
+- `helm dependency build` - Build chart dependencies
+- `helm dependency list` - List chart dependencies
+- `helm dependency update` - Update chart dependencies
+
+### Environment
+- `helm env` - Show Helm environment information
+- `helm version` - Show Helm version
+
+### Release Management
+- `helm install` - Install a chart
+- `helm uninstall` - Uninstall a release
+- `helm upgrade` - Upgrade a release
+- `helm rollback` - Rollback a release to a previous revision
+- `helm list` - List releases
+- `helm status` - Show release status
+- `helm history` - Show release history
+- `helm test` - Run tests for a release
+
+### Release Information
+- `helm get all` - Get all information about a release
+- `helm get hooks` - Get hooks for a release
+- `helm get manifest` - Get manifest for a release
+- `helm get metadata` - Get metadata for a release
+- `helm get notes` - Get notes for a release
+- `helm get values` - Get values for a release
+
+### Repository Management
+- `helm repo add` - Add a chart repository
+- `helm repo index` - Generate an index file for a chart repository
+- `helm repo list` - List chart repositories
+- `helm repo remove` - Remove a chart repository
+- `helm repo update` - Update chart repositories
+- `helm search repo` - Search repositories for charts
+- `helm search hub` - Search Helm Hub for charts
+
+### Registry Management
+- `helm registry login` - Log in to a registry
+- `helm registry logout` - Log out from a registry
+- `helm push` - Push a chart to a registry
+- `helm pull` - Pull a chart from a repository
+
+### Chart Information
+- `helm show all` - Show all information for a chart
+- `helm show chart` - Show chart definition
+- `helm show crds` - Show Custom Resource Definitions
+- `helm show readme` - Show README
+- `helm show values` - Show values
+
+### Plugin Management
+- `helm plugin install` - Install a plugin
+- `helm plugin list` - List plugins
+- `helm plugin uninstall` - Uninstall a plugin
+- `helm plugin update` - Update a plugin
+
+### Verification
+- `helm verify` - Verify a chart
+
+## Using UV CLI to Call MCP Commands
+
+Here are examples of using the UV CLI to call various Helm MCP commands:
+
+### Completion Commands
+```bash
+uv run mcp-cli cmd --server helm --tool helm_completion --tool-args '{"shell": "bash"}'
+uv run mcp-cli cmd --server helm --tool helm_completion --tool-args '{"shell": "zsh"}'
+uv run mcp-cli cmd --server helm --tool helm_completion --tool-args '{"shell": "fish"}'
+uv run mcp-cli cmd --server helm --tool helm_completion --tool-args '{"shell": "powershell"}'
+```
+
+### Chart Creation and Management
+```bash
+uv run mcp-cli cmd --server helm --tool helm_create --tool-args '{"name": "mychart"}'
+uv run mcp-cli cmd --server helm --tool helm_lint --tool-args '{"chart_path": "./mychart"}'
+uv run mcp-cli cmd --server helm --tool helm_package --tool-args '{"chart_path": "./mychart"}'
+uv run mcp-cli cmd --server helm --tool helm_template --tool-args '{"chart": "./mychart", "release_name": "my-release"}'
+```
+
+### Dependency Management
+```bash
+uv run mcp-cli cmd --server helm --tool helm_dependency_build --tool-args '{"chart_path": "./mychart"}'
+uv run mcp-cli cmd --server helm --tool helm_dependency_list --tool-args '{"chart_path": "./mychart"}'
+uv run mcp-cli cmd --server helm --tool helm_dependency_update --tool-args '{"chart_path": "./mychart"}'
+```
+
+### Environment
+```bash
+uv run mcp-cli cmd --server helm --tool helm_env --tool-args '{}'
+uv run mcp-cli cmd --server helm --tool helm_version --tool-args '{}'
+```
+
+### Release Management
+```bash
+uv run mcp-cli cmd --server helm --tool helm_install --tool-args '{"chart": "bitnami/nginx", "release_name": "my-nginx"}'
+uv run mcp-cli cmd --server helm --tool helm_uninstall --tool-args '{"release_name": "my-nginx"}'
+uv run mcp-cli cmd --server helm --tool helm_upgrade --tool-args '{"release_name": "my-nginx", "chart": "bitnami/nginx", "set_values": {"replicaCount": "3"}}'
+uv run mcp-cli cmd --server helm --tool helm_rollback --tool-args '{"release_name": "my-nginx", "revision": 1}'
+uv run mcp-cli cmd --server helm --tool helm_list --tool-args '{}'
+uv run mcp-cli cmd --server helm --tool helm_status --tool-args '{"release_name": "my-nginx"}'
+uv run mcp-cli cmd --server helm --tool helm_history --tool-args '{"release_name": "my-nginx"}'
+uv run mcp-cli cmd --server helm --tool helm_test --tool-args '{"release_name": "my-nginx"}'
+```
+
+### Release Information
+```bash
+uv run mcp-cli cmd --server helm --tool helm_get_all --tool-args '{"release_name": "my-nginx"}'
+uv run mcp-cli cmd --server helm --tool helm_get_hooks --tool-args '{"release_name": "my-nginx"}'
+uv run mcp-cli cmd --server helm --tool helm_get_manifest --tool-args '{"release_name": "my-nginx"}'
+uv run mcp-cli cmd --server helm --tool helm_get_metadata --tool-args '{"release_name": "my-nginx"}'
+uv run mcp-cli cmd --server helm --tool helm_get_notes --tool-args '{"release_name": "my-nginx"}'
+uv run mcp-cli cmd --server helm --tool helm_get_values --tool-args '{"release_name": "my-nginx", "all_values": true}'
+```
+
+### Repository Management
+```bash
+uv run mcp-cli cmd --server helm --tool helm_repo_add --tool-args '{"name": "bitnami", "url": "https://charts.bitnami.com/bitnami"}'
+uv run mcp-cli cmd --server helm --tool helm_repo_index --tool-args '{"directory": "./charts"}'
+uv run mcp-cli cmd --server helm --tool helm_repo_list --tool-args '{}'
+uv run mcp-cli cmd --server helm --tool helm_repo_remove --tool-args '{"name": "bitnami"}'
+uv run mcp-cli cmd --server helm --tool helm_repo_update --tool-args '{}'
+uv run mcp-cli cmd --server helm --tool helm_search_repo --tool-args '{"keyword": "nginx"}'
+uv run mcp-cli cmd --server helm --tool helm_search_hub --tool-args '{"keyword": "nginx"}'
+```
+
+### Registry Management
+```bash
+uv run mcp-cli cmd --server helm --tool helm_registry_login --tool-args '{"registry_url": "registry.example.com", "username": "user", "password": "pass123"}'
+uv run mcp-cli cmd --server helm --tool helm_registry_logout --tool-args '{"registry_url": "registry.example.com"}'
+uv run mcp-cli cmd --server helm --tool helm_push --tool-args '{"chart_path": "./mychart-1.0.0.tgz", "registry_url": "oci://registry.example.com/charts"}'
+uv run mcp-cli cmd --server helm --tool helm_pull --tool-args '{"chart": "nginx", "repo": "bitnami", "version": "13.2.0"}'
+```
+
+### Chart Information
+```bash
+uv run mcp-cli cmd --server helm --tool helm_show_all --tool-args '{"chart": "nginx", "repo": "bitnami"}'
+uv run mcp-cli cmd --server helm --tool helm_show_chart --tool-args '{"chart": "nginx", "repo": "bitnami"}'
+uv run mcp-cli cmd --server helm --tool helm_show_crds --tool-args '{"chart": "prometheus-operator", "repo": "prometheus-community"}'
+uv run mcp-cli cmd --server helm --tool helm_show_readme --tool-args '{"chart": "nginx", "repo": "bitnami"}'
+uv run mcp-cli cmd --server helm --tool helm_show_values --tool-args '{"chart": "nginx", "repo": "bitnami"}'
+```
+
+### Plugin Management
+```bash
+uv run mcp-cli cmd --server helm --tool helm_plugin_install --tool-args '{"plugin_url": "https://github.com/chartmuseum/helm-push"}'
+uv run mcp-cli cmd --server helm --tool helm_plugin_list --tool-args '{}'
+uv run mcp-cli cmd --server helm --tool helm_plugin_uninstall --tool-args '{"plugin_name": "push"}'
+uv run mcp-cli cmd --server helm --tool helm_plugin_update --tool-args '{"plugin_name": "push"}'
+```
+
+### Verification
+```bash
+uv run mcp-cli cmd --server helm --tool helm_verify --tool-args '{"path": "./mychart-1.0.0.tgz"}'
+```
+
+## Configuration
+
+### Usage with Claude Desktop
+
+Add this to your `claude_desktop_config.json`:
+
+<details>
+<summary>Using uvx</summary>
+
+```json
+"mcpServers": {
+  "helm": {
+    "command": "uvx",
+    "args": ["mcp-server-helm"]
+  }
+}
+```
+</details>
+
+<details>
+<summary>Using docker</summary>
+
+```json
+"mcpServers": {
+  "git": {
+    "command": "docker",
+    "args": ["run", "--rm", "-i", "mcp/helm"]
+  }
+}
+```
+</details>
+
+## Build
+
+Docker build:
+
+```bash
+cd src/helm
+docker build -t mcp/helm .
+```
+
+## License
+
+This MCP server is licensed under the MIT License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License. For more details, please see the LICENSE file in the project repository.
