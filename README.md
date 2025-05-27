@@ -1,6 +1,6 @@
 ## Overview
 
-Helm MCP provides a bridge between AI assistants and the Helm package manager for Kubernetes. It allows AI assistants to interact with Helm through natural language requests, executing commands like installing charts, managing repositories, and more. [Pypi v0.1.1](https://pypi.org/project/mcp-server-helm/)
+Helm MCP provides a bridge between AI assistants and the Helm package manager for Kubernetes. It allows AI assistants to interact with Helm through natural language requests, executing commands like installing charts, managing repositories, and more.
 
 ## Claude Desktop
 

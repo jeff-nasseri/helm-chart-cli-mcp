@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="02f6aa69-76c5-4673-8d17-d81bebd10ee4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflow/publish.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/publish.yml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2x3CLuIo1CCw9VwHkggZTh6pcYm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-e0ed3721d81e-36ea0e71a18c-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.25410.159" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="02f6aa69-76c5-4673-8d17-d81bebd10ee4" name="Changes" comment="" />
+      <created>1747157317460</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1747157317460</updated>
+      <workItem from="1747157319526" duration="1828000" />
+    </task>
+    <task id="LOCAL-00001" summary="feat(helm): Initialize MCP server for Helm chart management&#10;&#10;This commit introduces a comprehensive MCP server implementation for Helm chart management, enabling seamless integration with Helm CLI operations through structured API endpoints. The implementation includes support for all major Helm operations such as install, upgrade, rollback, package, and repository management.&#10;&#10;Key features:&#10;- Complete implementation of Helm CLI commands as structured tool operations&#10;- JSON schema definitions for all command parameters ensuring type safety&#10;- Robust error handling and logging for all Helm operations&#10;- Formatted output processing to improve readability of command results&#10;- Support for both simple operations and complex workflows like chart installation with custom values&#10;&#10;The initial version (0.1.1) provides a foundation for further enhancements while ensuring compatibility with standard Helm workflows.">
+      <option name="closed" value="true" />
+      <created>1747158222279</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1747158222279</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat(helm): Add hello-world Helm chart for simple Nginx deployment&#10;&#10;This commit introduces a complete hello-world Helm chart that demonstrates basic Helm functionality. The chart deploys an Nginx container serving a simple webpage with a customizable greeting message. The implementation includes all necessary components for a production-ready Helm chart:&#10;&#10;- Chart.yaml with proper metadata and versioning&#10;- Comprehensive README.md with installation instructions and configuration options&#10;- Standard Kubernetes resources: Deployment and Service&#10;- Helper templates for consistent naming and labeling&#10;- Configurable values.yaml with sensible defaults&#10;- Standard .helmignore file to exclude unnecessary files&#10;&#10;The chart supports customization of resource limits, replica count, container image, and the displayed message. It also includes proper health checks and follows Kubernetes best practices for labels and selectors.">
+      <option name="closed" value="true" />
+      <created>1747158238258</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1747158238258</updated>
+    </task>
+    <task id="LOCAL-00003" summary="docs(project): Initial project setup with license, configuration, and documentation&#10;&#10;This commit establishes the foundational structure for the helm-chart-cli-mcp project, setting up the essential components required for development and distribution. The core files include a comprehensive README.md with detailed documentation of all available Helm tools and usage examples, a MIT LICENSE file for clear licensing terms, Docker configuration for containerized deployment, and project configuration files.&#10;&#10;- Added MIT LICENSE file to establish clear usage and distribution terms&#10;- Created comprehensive README.md with tool documentation and usage examples&#10;- Added Dockerfile for containerized deployment with Helm dependencies&#10;- Set up pyproject.toml with project metadata and dependencies&#10;- Configured .gitignore to exclude Python cache and virtual environment files">
+      <option name="closed" value="true" />
+      <created>1747158256882</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1747158256882</updated>
+    </task>
+    <task id="LOCAL-00004" summary="ci(github): Add comprehensive GitHub Actions workflow for automated PyPI publishing&#10;&#10;This commit introduces a complete CI/CD pipeline that automates version management, building, testing, and publishing of the Python package to PyPI. The workflow includes semantic versioning with GitVersion, multi-Python version testing, and automated GitHub releases.&#10;&#10;- Implements GitVersion for automatic semantic versioning based on git history&#10;- Adds multi-stage workflow with version determination, build, test, and publish jobs&#10;- Configures PyPI publishing with trusted publisher authentication for secure deployment&#10;- Includes comprehensive GitVersion output debugging for troubleshooting version calculation&#10;- Sets up automated GitHub release creation with detailed release notes">
+      <option name="closed" value="true" />
+      <created>1748357634511</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1748357634511</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat(versioning): Add GitVersion configuration for automated semantic versioning&#10;&#10;This commit introduces GitVersion.yml configuration file to enable automated semantic versioning across the project lifecycle. The configuration supports multiple branching strategies with appropriate version increment rules.&#10;&#10;- Configured ContinuousDelivery mode with semantic version bump patterns&#10;- Set up branch-specific versioning: main (patch), develop (minor alpha), release (patch beta)&#10;- Added support for feature branches with inherited versioning and hotfix branches&#10;- Enabled commit message-based version control using +semver tags for manual overrides">
+      <option name="closed" value="true" />
+      <created>1748357644082</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1748357644082</updated>
+    </task>
+    <task id="LOCAL-00006" summary="refactor(init): Clean up package initialization file&#10;&#10;Simplified the package __init__.py file by removing version declaration and extra whitespace. This change streamlines the module initialization and removes redundant version information that should be managed through proper packaging configuration files.&#10;&#10;- Removed __version__ variable from __init__.py&#10;- Cleaned up trailing whitespace and empty lines&#10;- Maintains essential module docstring for package description">
+      <option name="closed" value="true" />
+      <created>1748357660088</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1748357660088</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="feat(helm): Initialize MCP server for Helm chart management&#10;&#10;This commit introduces a comprehensive MCP server implementation for Helm chart management, enabling seamless integration with Helm CLI operations through structured API endpoints. The implementation includes support for all major Helm operations such as install, upgrade, rollback, package, and repository management.&#10;&#10;Key features:&#10;- Complete implementation of Helm CLI commands as structured tool operations&#10;- JSON schema definitions for all command parameters ensuring type safety&#10;- Robust error handling and logging for all Helm operations&#10;- Formatted output processing to improve readability of command results&#10;- Support for both simple operations and complex workflows like chart installation with custom values&#10;&#10;The initial version (0.1.1) provides a foundation for further enhancements while ensuring compatibility with standard Helm workflows." />
+    <MESSAGE value="feat(helm): Add hello-world Helm chart for simple Nginx deployment&#10;&#10;This commit introduces a complete hello-world Helm chart that demonstrates basic Helm functionality. The chart deploys an Nginx container serving a simple webpage with a customizable greeting message. The implementation includes all necessary components for a production-ready Helm chart:&#10;&#10;- Chart.yaml with proper metadata and versioning&#10;- Comprehensive README.md with installation instructions and configuration options&#10;- Standard Kubernetes resources: Deployment and Service&#10;- Helper templates for consistent naming and labeling&#10;- Configurable values.yaml with sensible defaults&#10;- Standard .helmignore file to exclude unnecessary files&#10;&#10;The chart supports customization of resource limits, replica count, container image, and the displayed message. It also includes proper health checks and follows Kubernetes best practices for labels and selectors." />
+    <MESSAGE value="docs(project): Initial project setup with license, configuration, and documentation&#10;&#10;This commit establishes the foundational structure for the helm-chart-cli-mcp project, setting up the essential components required for development and distribution. The core files include a comprehensive README.md with detailed documentation of all available Helm tools and usage examples, a MIT LICENSE file for clear licensing terms, Docker configuration for containerized deployment, and project configuration files.&#10;&#10;- Added MIT LICENSE file to establish clear usage and distribution terms&#10;- Created comprehensive README.md with tool documentation and usage examples&#10;- Added Dockerfile for containerized deployment with Helm dependencies&#10;- Set up pyproject.toml with project metadata and dependencies&#10;- Configured .gitignore to exclude Python cache and virtual environment files" />
+    <MESSAGE value="ci(github): Add comprehensive GitHub Actions workflow for automated PyPI publishing&#10;&#10;This commit introduces a complete CI/CD pipeline that automates version management, building, testing, and publishing of the Python package to PyPI. The workflow includes semantic versioning with GitVersion, multi-Python version testing, and automated GitHub releases.&#10;&#10;- Implements GitVersion for automatic semantic versioning based on git history&#10;- Adds multi-stage workflow with version determination, build, test, and publish jobs&#10;- Configures PyPI publishing with trusted publisher authentication for secure deployment&#10;- Includes comprehensive GitVersion output debugging for troubleshooting version calculation&#10;- Sets up automated GitHub release creation with detailed release notes" />
+    <MESSAGE value="feat(versioning): Add GitVersion configuration for automated semantic versioning&#10;&#10;This commit introduces GitVersion.yml configuration file to enable automated semantic versioning across the project lifecycle. The configuration supports multiple branching strategies with appropriate version increment rules.&#10;&#10;- Configured ContinuousDelivery mode with semantic version bump patterns&#10;- Set up branch-specific versioning: main (patch), develop (minor alpha), release (patch beta)&#10;- Added support for feature branches with inherited versioning and hotfix branches&#10;- Enabled commit message-based version control using +semver tags for manual overrides" />
+    <MESSAGE value="refactor(init): Clean up package initialization file&#10;&#10;Simplified the package __init__.py file by removing version declaration and extra whitespace. This change streamlines the module initialization and removes redundant version information that should be managed through proper packaging configuration files.&#10;&#10;- Removed __version__ variable from __init__.py&#10;- Cleaned up trailing whitespace and empty lines&#10;- Maintains essential module docstring for package description" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(init): Clean up package initialization file&#10;&#10;Simplified the package __init__.py file by removing version declaration and extra whitespace. This change streamlines the module initialization and removes redundant version information that should be managed through proper packaging configuration files.&#10;&#10;- Removed __version__ variable from __init__.py&#10;- Cleaned up trailing whitespace and empty lines&#10;- Maintains essential module docstring for package description" />
+  </component>
+</project>
