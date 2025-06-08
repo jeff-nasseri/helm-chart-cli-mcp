@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "my-python-server": {
+      "command": "${PATH_TO_PYTHON_EXECUTE_ABLE_FILE}:-python",
+      "args": [
+          "${PATH_TO_SERVER_PY}:-mikrotik-mcp/src/mcp_server_helm/server.py"
+      ],
+      "env": {}
+    }
+  }
+}

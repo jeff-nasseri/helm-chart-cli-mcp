@@ -602,6 +602,12 @@ Add this to your `claude_desktop_config.json`:
 ```shell
 # run the inspector against the mcp-server-helm
 npx @modelcontextprotocol/inspector uvx mcp-server-helm
+
+# Run the inspector against the mcp-config.json
+npm install -g @modelcontextprotocol/inspector
+cp mcp-config.json.example mcp-config.json
+nano mcp-config.json # Edit the values
+mcp-inspector --config mcp-config.json --server my-python-server
 ```
 
 ## Build
