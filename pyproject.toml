@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
 authors = [
-    {name = "Jeff Nasseri", email = "jeff.nasseri@example.com"}
+    {name = "Jeff Nasseri", email = "sir.jeff.nasseri@gmail.com"}
 ]
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -23,3 +23,6 @@ dependencies = [
 
 [project.scripts]
 mcp-server-helm = "mcp_helm.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
