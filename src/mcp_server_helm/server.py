@@ -1,13 +1,23 @@
 import sys
 import logging
 import asyncio
+from pathlib import Path
 
 # Set up logging
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-from .core.server import HelmMCPServer
+# Handle relative imports
+try:
+    from .core.server import HelmMCPServer
+except ImportError:
+    # If relative import fails, add parent directory to path
+    import os
+    current_dir = Path(__file__).parent
+    parent_dir = current_dir.parent.parent
+    sys.path.insert(0, str(parent_dir))
+    from src.mcp_server_helm.core.server import HelmMCPServer
 
 
 async def serve() -> None:
