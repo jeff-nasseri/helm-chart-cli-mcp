@@ -22,7 +22,10 @@ dependencies = [
 ]
 
 [project.scripts]
-mcp-server-helm = "mcp_helm.server:main"
+mcp-server-helm = "mcp_server_helm.server:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
