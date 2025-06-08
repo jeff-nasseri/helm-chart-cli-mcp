@@ -21,6 +21,13 @@ dependencies = [
     "mcp-python>=0.1.0",
 ]
 
+[project.optional-dependencies]
+test = [
+    "pytest>=6.0",
+    "pytest-cov>=2.0",
+    "pytest-mock>=3.0",
+]
+
 [project.scripts]
 mcp-server-helm = "mcp_server_helm.server:main"
 
