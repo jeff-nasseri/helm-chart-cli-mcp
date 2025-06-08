@@ -1,2 +1,2 @@
 hello-world
-mcp_helm
+mcp_server_helm

@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02f6aa69-76c5-4673-8d17-d81bebd10ee4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/mcp-config.json.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/publish.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/publish.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcp_server_helm/core/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcp_server_helm/core/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcp_server_helm/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcp_server_helm/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcp_server_helm.egg-info/PKG-INFO" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcp_server_helm.egg-info/PKG-INFO" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcp_server_helm.egg-info/SOURCES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcp_server_helm.egg-info/SOURCES.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcp_server_helm.egg-info/entry_points.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcp_server_helm.egg-info/entry_points.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcp_server_helm.egg-info/requires.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcp_server_helm.egg-info/requires.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcp_server_helm.egg-info/top_level.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcp_server_helm.egg-info/top_level.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,9 +38,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "feat/break-down-monolith-server-into-clean-structure",
+    "git-widget-placeholder": "master",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -113,7 +116,31 @@
       <option name="project" value="LOCAL" />
       <updated>1748357660088</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fix(versioning): Update GitVersion configuration with conventional commits and streamlined branch settings&#10;&#10;Enhanced GitVersion.yml to support conventional commit patterns for automatic version bumping and simplified branch configuration by removing deprecated properties.">
+      <option name="closed" value="true" />
+      <created>1749380371564</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1749380371565</updated>
+    </task>
+    <task id="LOCAL-00008" summary="ci(github): upgrade GitVersion from 5.x to 6.x in publish workflow&#10;&#10;Updated the GitVersion tool specification in the GitHub Actions publish workflow to use version 6.x instead of 5.x. This upgrade ensures compatibility with the latest GitVersion features and improvements, providing better semantic versioning capabilities for the helm-chart-cli-mcp project.">
+      <option name="closed" value="true" />
+      <created>1749380624120</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1749380624120</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fix(build): Update package configuration and entry point for setuptools compatibility&#10;&#10;Modified the project configuration to ensure proper package discovery and module importing. Updated the main entry point script reference to use underscores instead of hyphens for Python module naming conventions.&#10;&#10;- Changed entry point from 'mcp_helm.server:main' to 'mcp_server_helm.server:main' for consistent naming&#10;- Added setuptools package-dir configuration to specify source directory location&#10;- Ensures proper package structure alignment with Python import standards">
+      <option name="closed" value="true" />
+      <created>1749381947084</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1749381947084</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +156,9 @@
     <MESSAGE value="ci(github): Add comprehensive GitHub Actions workflow for automated PyPI publishing&#10;&#10;This commit introduces a complete CI/CD pipeline that automates version management, building, testing, and publishing of the Python package to PyPI. The workflow includes semantic versioning with GitVersion, multi-Python version testing, and automated GitHub releases.&#10;&#10;- Implements GitVersion for automatic semantic versioning based on git history&#10;- Adds multi-stage workflow with version determination, build, test, and publish jobs&#10;- Configures PyPI publishing with trusted publisher authentication for secure deployment&#10;- Includes comprehensive GitVersion output debugging for troubleshooting version calculation&#10;- Sets up automated GitHub release creation with detailed release notes" />
     <MESSAGE value="feat(versioning): Add GitVersion configuration for automated semantic versioning&#10;&#10;This commit introduces GitVersion.yml configuration file to enable automated semantic versioning across the project lifecycle. The configuration supports multiple branching strategies with appropriate version increment rules.&#10;&#10;- Configured ContinuousDelivery mode with semantic version bump patterns&#10;- Set up branch-specific versioning: main (patch), develop (minor alpha), release (patch beta)&#10;- Added support for feature branches with inherited versioning and hotfix branches&#10;- Enabled commit message-based version control using +semver tags for manual overrides" />
     <MESSAGE value="refactor(init): Clean up package initialization file&#10;&#10;Simplified the package __init__.py file by removing version declaration and extra whitespace. This change streamlines the module initialization and removes redundant version information that should be managed through proper packaging configuration files.&#10;&#10;- Removed __version__ variable from __init__.py&#10;- Cleaned up trailing whitespace and empty lines&#10;- Maintains essential module docstring for package description" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(init): Clean up package initialization file&#10;&#10;Simplified the package __init__.py file by removing version declaration and extra whitespace. This change streamlines the module initialization and removes redundant version information that should be managed through proper packaging configuration files.&#10;&#10;- Removed __version__ variable from __init__.py&#10;- Cleaned up trailing whitespace and empty lines&#10;- Maintains essential module docstring for package description" />
+    <MESSAGE value="fix(versioning): Update GitVersion configuration with conventional commits and streamlined branch settings&#10;&#10;Enhanced GitVersion.yml to support conventional commit patterns for automatic version bumping and simplified branch configuration by removing deprecated properties." />
+    <MESSAGE value="ci(github): upgrade GitVersion from 5.x to 6.x in publish workflow&#10;&#10;Updated the GitVersion tool specification in the GitHub Actions publish workflow to use version 6.x instead of 5.x. This upgrade ensures compatibility with the latest GitVersion features and improvements, providing better semantic versioning capabilities for the helm-chart-cli-mcp project." />
+    <MESSAGE value="fix(build): Update package configuration and entry point for setuptools compatibility&#10;&#10;Modified the project configuration to ensure proper package discovery and module importing. Updated the main entry point script reference to use underscores instead of hyphens for Python module naming conventions.&#10;&#10;- Changed entry point from 'mcp_helm.server:main' to 'mcp_server_helm.server:main' for consistent naming&#10;- Added setuptools package-dir configuration to specify source directory location&#10;- Ensures proper package structure alignment with Python import standards" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(build): Update package configuration and entry point for setuptools compatibility&#10;&#10;Modified the project configuration to ensure proper package discovery and module importing. Updated the main entry point script reference to use underscores instead of hyphens for Python module naming conventions.&#10;&#10;- Changed entry point from 'mcp_helm.server:main' to 'mcp_server_helm.server:main' for consistent naming&#10;- Added setuptools package-dir configuration to specify source directory location&#10;- Ensures proper package structure alignment with Python import standards" />
   </component>
 </project>

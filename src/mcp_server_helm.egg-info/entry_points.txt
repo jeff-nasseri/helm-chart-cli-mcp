@@ -1,2 +1,2 @@
 [console_scripts]
-mcp-server-helm = mcp_helm.server:main
+mcp-server-helm = mcp_server_helm.server:main
