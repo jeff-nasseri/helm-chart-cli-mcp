@@ -1,5 +1,7 @@
 [![MseeP.ai Security Assessment Badge](https://mseep.net/pr/jeff-nasseri-helm-chart-cli-mcp-badge.png)](https://mseep.ai/app/jeff-nasseri-helm-chart-cli-mcp)
 
+[![Verified on MseeP](https://mseep.ai/badge.svg)](https://mseep.ai/app/62075ff9-297e-40ef-9587-e66e039b4738)
+
 ## Overview
 
 Helm MCP provides a bridge between AI assistants and the Helm package manager for Kubernetes. It allows AI assistants to interact with Helm through natural language requests, executing commands like installing charts, managing repositories, and more.
